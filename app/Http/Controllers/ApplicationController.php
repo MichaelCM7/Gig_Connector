@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
+    use AuthorizesRequests;
     /**
      * Display a listing of all applications
      */
     public function index()
     {
+        $this->authorize('viewAny', Application::class);
+
         $user = auth()->user();
 
         if ($user->isAdmin()) {
@@ -27,9 +31,6 @@ class ApplicationController extends Controller
             // Student see only their own applications
             $applications = Application::where('student_id', $user->id)->get();
         
-        } else {
-            // Fallback
-            $applications = collect();
         }
         
         return view('applications.index', compact('applications'));
@@ -80,6 +81,8 @@ class ApplicationController extends Controller
      */
     public function show(Application $application)
     {
+        $this->authorize('view', Application::class);
+
         return view('applications.show', compact('application'));
     }
 
@@ -96,6 +99,8 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, Application $application)
     {
+        $this->authorize('update', Application::class);
+
         // Validate status
         $request->validate([
             'status' => 'required|string|in:pending,approved,shortlisted,rejected'
@@ -113,6 +118,8 @@ class ApplicationController extends Controller
      */
     public function destroy(Application $application)
     {
+        $this->authorize('delete', Application::class);
+
         // Delete application
         $application->delete();
 
