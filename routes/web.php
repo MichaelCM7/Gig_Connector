@@ -7,6 +7,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Registration routes for provider and student
+Route::get('/register/provider', function() {
+    return view('auth.register');
+})->name('provider.register');
+
+Route::post('/register/provider', [App\Http\Controllers\Auth\RegisteredUserController::class, 'storeProvider'])->name('provider.register.submit');
+
+Route::get('/register/student', function() {
+    return view('auth.register');
+})->name('student.register');
+
+Route::post('/register/student', [App\Http\Controllers\Auth\RegisteredUserController::class, 'storeStudent'])->name('student.register.submit');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
