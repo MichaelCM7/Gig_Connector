@@ -1,8 +1,8 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import forms from '@tailwindcss/forms';
+// /var/www/html/IAP_Gig_Connector/tailwind.config.js
 
-/** @type {import('tailwindcss').Config} */
-export default {
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+module.exports = {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
@@ -12,10 +12,16 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                // Set Poppins as the default sans font
+                sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                // Custom brand colors matching the design
+                'gig-purple': '#5b46b6',
+                'gig-purple-dark': '#4a3a96',
             },
         },
     },
 
-    plugins: [forms],
+    plugins: [require('@tailwindcss/forms')],
 };

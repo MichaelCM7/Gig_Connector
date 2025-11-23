@@ -1,3 +1,22 @@
+/* /var/www/html/IAP_Gig_Connector/resources/css/app.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom style for the black and white illustration look */
+.illustration-filter {
+    filter: grayscale(100%);
+    opacity: 0.9;
+}
+
+/* Custom Component to match the clean input fields in your design */
+@layer components {
+    .clean-input {
+        /* Removes border/shadow on focus */
+        @apply border-gray-300 focus:border-gig-purple focus:ring-0 shadow-none;
+        /* Adds a subtle border radius */
+        @apply rounded-md;
+        /* Center placeholder text if needed (requires vendor prefixes, but we'll stick to alignment) */
+    }
+}
