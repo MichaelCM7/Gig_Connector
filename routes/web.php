@@ -84,6 +84,7 @@ Route::resource('applications', ApplicationController::class);
 
 require __DIR__.'/auth.php';
 
+// reverting the PR
 // ============== GIG ROUTES =================
 use App\Http\Controllers\GigController; 
 Route::resource('gigs', GigController::class);
