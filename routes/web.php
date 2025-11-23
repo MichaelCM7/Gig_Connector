@@ -101,3 +101,5 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::resource('applications', ApplicationController::class);
 
 require __DIR__.'/auth.php';
+
+// reverting the PR
