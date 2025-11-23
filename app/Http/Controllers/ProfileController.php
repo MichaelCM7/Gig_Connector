@@ -16,10 +16,9 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-
-        $profile = Auth::user()->studentProfile; // Fetch existing student data
-
-        return view('student.profile.edit', compact('profile'));
+        return view('profile.edit', [
+            'user' => $request->user(),
+        ]);
     }
 
     /**
