@@ -1,98 +1,97 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gig Connector</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Matching the theme color: #6B46C1
+                        'gig-purple': '#6B46C1', 
+                        'gig-purple-light': '#EDE9FE', // Equivalent to Violet-100 or Purple-100
+                        'gig-bg': '#f7f7fa',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7fa;
+        }
+        /* Custom scrollbar for the job list */
+        .job-list {
+            scrollbar-width: thin;
+            scrollbar-color: #6B46C1 #f7f7fa;
+        }
+        .job-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        .job-list::-webkit-scrollbar-thumb {
+            background-color: #6B46C1;
+            border-radius: 4px;
+        }
+        .job-list::-webkit-scrollbar-track {
+            background-color: #f7f7fa;
+        }
+
+        /* Active sidebar link style */
+        .sidebar-active {
+            background-color: #EDE9FE; /* gig-purple-light */
+            color: #6B46C1; /* gig-purple */
+            font-weight: 600;
+            border-radius: 12px;
+        }
+
+        /* Job Card Icon Styling */
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        /* Specific class for the filter sidebar transition */
+        .filter-open {
+            width: 320px !important;
+            min-width: 320px !important;
+            padding: 24px 16px; /* p-6 md:p-4 equivalent */
+        }
+        .filter-closed {
+             width: 0px !important;
+             min-width: 0px !important;
+             padding: 0;
+        }
+
+        /* Ensure the main content uses the full viewport height */
+        #content-wrapper {
+            display: flex;
+            flex-grow: 1;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gig-bg flex">
+
     <!-- 1. Sidebar Navigation (Left) -->
     <aside class="w-20 md:w-64 flex-shrink-0 bg-white border-r border-gray-100 p-4 sticky top-0 h-screen transition-all duration-300">
         <div class="flex flex-col h-full">
 
             <!-- User Profile / Avatar -->
             <div class="hidden md:flex items-center space-x-3 pb-8 border-b border-gray-100 mb-6">
-                <img src="https://placehold.co/40x40/6B46C1/ffffff?text=U" alt="User Avatar" class="rounded-full w-10 h-10 object-cover border-2 border-gig-purple">
-                <div>
-                    <span class="block text-sm font-semibold text-gray-900">{{ Auth::user()->name }}</span>
-                    <span class="block text-xs text-gray-500">Student</span>
-                </div>
-            </div>
-            
-            <div class="flex md:hidden items-center justify-center pb-8 border-b border-gray-100 mb-6">
-                    <img src="https://placehold.co/40x40/6B46C1/ffffff?text=U" alt="User Avatar" class="rounded-full w-10 h-10 object-cover border-2 border-gig-purple">
-            </div>
-
-            <!-- Main Menu Links -->
-            <nav class="space-y-2 overflow-y-auto">
-                <p class="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">MAIN</p>
-                
-                <!-- Dashboard (Active) -->
-                <a href="#" class="sidebar-active flex items-center p-3 transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-7v7m-4-6v6m4-5v5m4-4v4" />
-                    </svg>
-                    <span class="hidden md:block">Dashboard</span>
-                </a>
-
-                <!-- Recommendations -->
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    <span class="hidden md:block">Recommendations</span>
-                </a>
-
-                <!-- My Applications -->
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6M17 16l4-4-4-4M7 8l-4 4 4 4" />
-                    </svg>
-                    <span class="hidden md:block">My Applications</span>
-                </a>
-                
-                <!-- Saved Jobs -->
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                    </svg>
-                    <span class="hidden md:block">Saved Jobs</span>
-                </a>
-                
-                <!-- My Profile -->
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                    <span class="hidden md:block">My Profile</span>
-                </a>
-
-                <!-- Settings -->
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span class="hidden md:block">Settings</span>
-                </a>
-                
-                <p class="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 pt-6">MESSAGES</p>
-
-                <!-- Notifications -->
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                    </svg>
-                    <span class="hidden md:block">Notifications</span>
-                    <span class="hidden md:block ml-auto bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">4</span>
-                </a>
-            </nav>
-
-            <!-- Bottom area: Logout placed at bottom and always visible -->
-            <div class="mt-auto pt-6 border-t border-gray-100">
-                <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group w-full">
-                    <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 11-6 0v-1" />
-                    </svg>
-                    <span class="hidden md:block">Logout</span>
-                </a>
-            </div>
-
-        </div>
-    </aside>
+                <img src="https://placehold.co/40x40/6B46C1/ffffff?text=S" alt="User Avatar" class="rounded-full w-10 h-10 object-cover border-2 border-gig-purple">
                 <div>
                     <span class="block text-sm font-semibold text-gray-900">{{ Auth::user()->name }}</span>
                     <span class="block text-xs text-gray-500">Student</span>
@@ -105,7 +104,7 @@
 
             <!-- Main Menu Links -->
             <nav class="space-y-2 flex-grow">
-                <p class="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">MAIN</p>
+                <!-- <p class="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">MAIN</p> -->
                 
                 <!-- Dashboard (Active) -->
                 <a href="#" class="sidebar-active flex items-center p-3 transition duration-150 group">
@@ -156,7 +155,7 @@
                     <span class="hidden md:block">Settings</span>
                 </a>
                 
-                <p class="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 pt-6">MESSAGES</p>
+                <!-- <p class="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 pt-6">MESSAGES</p> -->
 
                 <!-- Notifications -->
                 <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
@@ -168,14 +167,21 @@
                 </a>
 
                 <!-- Logout -->
+                <!-- Logout -->
                 <a href="#" class="flex items-center p-3 text-gray-600 hover:bg-gig-purple-light hover:text-gig-purple rounded-xl transition duration-150 group">
+                    <!-- SVG for Logout Icon (path for a door with an exit arrow) -->
                     <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        <path 
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2" 
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h3a3 3 0 013 3v1" 
+                        />
                     </svg>
                     <span class="hidden md:block">Logout</span>
                 </a>
               </nav>
-                </div>
+            </div>
           </div>
         </div>
     </aside>
