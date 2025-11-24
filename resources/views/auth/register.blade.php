@@ -105,7 +105,8 @@
                         <p class="text-xs text-gray-500 mt-1">At least 8 characters.</p>
                     </div>
                     
-                    <!-- University/College --><div>
+                    <!-- University/College -->
+                    <!-- <div>
                         <label for="university" class="block text-sm font-bold text-gray-900 mb-2">University/College</label>
                         <div class="relative">
                             <select id="university" name="university" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[#6B46C1] focus:ring focus:ring-[#6B46C1] focus:ring-opacity-50 pl-10 appearance-none bg-white text-gray-700 transition duration-150">
@@ -116,26 +117,29 @@
                                 <option value="JKUAT">JKUAT</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <!-- Icon for University --><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                             </div>
-                            <!-- Down Arrow for Select --><div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                 <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                 </svg>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!-- Submit Button --><button type="submit" class="w-full bg-[#6B46C1] hover:bg-[#5a3da3] text-white font-bold py-3 rounded-xl shadow-lg transition duration-300 mt-4 text-lg transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-[#6B46C1]/50">
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-[#6B46C1] hover:bg-[#5a3da3] text-white font-bold py-3 rounded-xl shadow-lg transition duration-300 mt-4 text-lg transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-[#6B46C1]/50">
                         Create Account
                     </button>
 
                     <!-- Login Link --><div class="text-center pt-4">
                         <p class="text-gray-600">
-                            Already have an account? <a href="#" class="text-[#6B46C1] hover:text-[#5a3da3] hover:underline font-bold transition duration-300">Login</a>
+                            Already have an account? <a href="{{ route('login') }}" class="text-[#6B46C1] hover:text-[#5a3da3] hover:underline font-bold transition duration-300">Login</a>
                         </p>
                     </div>
                 </form>
