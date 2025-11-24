@@ -30,10 +30,10 @@ Route::middleware(['auth', 'role:provider'])->group(function () {
 });
 
 // Protected routes for admins
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    // ... add more admin-specific routes here
-});
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+//     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+//     // ... add more admin-specific routes here
+// });
 
 // ============== APPLICATION ROUTES =================
 Route::resource('applications', ApplicationController::class);

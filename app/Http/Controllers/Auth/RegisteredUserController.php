@@ -33,13 +33,25 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'university' => ['nullable', 'string', 'max:100'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'student',
         ]);
+
+        if ($request->filled('university')) {
+            \App\Models\StudentProfile::create([
+                'user_id' => $user->id,
+                'university' => $request->university,
+                'year_of_study' => '1', // Default or add field
+                'field_of_study' => 'General', // Default or add field
+                'preferred_hours' => 'weekdays', // Default
+            ]);
+        }
 
         event(new Registered($user));
 
