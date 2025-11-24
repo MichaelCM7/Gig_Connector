@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ProviderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,9 +15,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Student Dashboard Route
-Route::get('/student/dashboard', function () {
-    return view('pages.studentDashboard');
-})->middleware(['auth'])->name('student.dashboard');
+Route::get('/student/dashboard', [StudentController::class, 'dashboard'])->middleware(['auth'])->name('student.dashboard');
+Route::get('/student/jobs/{id}', [StudentController::class, 'showJob'])->middleware(['auth'])->name('student.jobs.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
