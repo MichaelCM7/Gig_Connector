@@ -100,7 +100,7 @@
                     </div>
                     
                     <!-- Login Button -->
-                    <button type="submit" class="w-full bg-[#6B46C1] hover:bg-[#5a3da3] text-white font-bold py-3 rounded-xl shadow-lg transition duration-300 mt-4 text-lg transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-[#6B46C1]/50">
+                    <button href="{{ route('login') }}" type="submit" class="w-full bg-[#6B46C1] hover:bg-[#5a3da3] text-white font-bold py-3 rounded-xl shadow-lg transition duration-300 mt-4 text-lg transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-[#6B46C1]/50">
                         Log In
                     </button>
 
