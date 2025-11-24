@@ -37,17 +37,11 @@
 
             <div class="w-full max-w-md space-y-5">
                 <a href="{{ route('register') }}" class="block w-full bg-[#6B46C1] hover:bg-[#5a3da3] text-white text-center font-bold py-4 rounded-lg shadow-lg transition duration-300 text-xl">
-                    I'm a Student
+                    Sign Up
                 </a>
-                <a href="{{ route('register') }}" class="block w-full bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-center font-bold py-4 rounded-lg shadow-sm transition duration-300 text-xl">
-                    I'm a Provider
+                <a href="{{ route('login') }}" class="block w-full bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-center font-bold py-4 rounded-lg shadow-sm transition duration-300 text-xl">
+                    Log In
                 </a>
-            </div>
-
-            <div class="text-center md:text-left mt-4">
-                <p class="text-gray-600 text-lg">
-                    Already have an account? <a href="{{ route('login') }}" class="text-[#6B46C1] hover:underline font-bold">Login</a>
-                </p>
             </div>
         </div>
     </div>
