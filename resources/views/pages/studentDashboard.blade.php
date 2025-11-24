@@ -230,6 +230,218 @@
                         <option>Newest Post</option>
                         <option>Salary (High to Low)</option>
                         <option>Salary (Low to High)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Job Card Grid -->
+            <div id="job-card-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- Job Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 cursor-pointer">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="icon-container bg-blue-100 text-blue-800">
+                            <span class="text-xl font-bold">Ps</span>
+                        </div>
+                        <button class="text-gray-400 hover:text-gig-purple">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight">Senior Product Designer - Growth</h3>
+                    <p class="text-sm text-gray-500 mb-3">Afghanistan</p>
+                    
+                    <div class="flex space-x-4 text-xs text-gray-600 mb-4">
+                        <span>Kabul, New</span>
+                        <span>Full-Time</span>
+                        <span class="font-semibold text-gray-800">$105,20 PA</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4 h-8 overflow-hidden">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 text-[10px] font-medium mb-4">
+                        <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full">#Design</span>
+                        <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full">#Senior</span>
+                        <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full">#User Experience</span>
+                    </div>
+                    
+                    <div class="text-xs text-gray-400 text-right">28 March 2021</div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 cursor-pointer">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="icon-container bg-purple-100 text-purple-800">
+                            <span class="text-xl font-bold">Xd</span>
+                        </div>
+                        <button class="text-gray-400 hover:text-gig-purple">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight">Experienced Market Research Analyst</h3>
+                    <p class="text-sm text-gray-500 mb-3">Ethiopia</p>
+                    
+                    <div class="flex space-x-4 text-xs text-gray-600 mb-4">
+                        <span>Addis Ababa</span>
+                        <span>Full-Time</span>
+                        <span class="font-semibold text-gray-800">$100,00 PA</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4 h-8 overflow-hidden">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 text-[10px] font-medium mb-4">
+                        <span class="px-2 py-0.5 bg-pink-100 text-pink-700 rounded-full">#Design</span>
+                        <span class="px-2 py-0.5 bg-pink-100 text-pink-700 rounded-full">#Market</span>
+                        <span class="px-2 py-0.5 bg-pink-100 text-pink-700 rounded-full">#Research</span>
+                    </div>
+                    
+                    <div class="text-xs text-gray-400 text-right">28 March 2021</div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 cursor-pointer">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="icon-container bg-red-100 text-red-800">
+                            <span class="text-xl font-bold">Ai</span>
+                        </div>
+                        <button class="text-gray-400 hover:text-gig-purple">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight">Pega Decisioning/Marketing Developer</h3>
+                    <p class="text-sm text-gray-500 mb-3">Mozambique</p>
+                    
+                    <div class="flex space-x-4 text-xs text-gray-600 mb-4">
+                        <span>Maputo</span>
+                        <span>Full-Time</span>
+                        <span class="font-semibold text-gray-800">$5,200 PA</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4 h-8 overflow-hidden">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 text-[10px] font-medium mb-4">
+                        <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded-full">#Design</span>
+                        <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded-full">#Senior</span>
+                        <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded-full">#User Experience</span>
+                    </div>
+                    
+                    <div class="text-xs text-gray-400 text-right">28 March 2021</div>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 cursor-pointer">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="icon-container bg-green-100 text-green-800">
+                            <span class="text-xl font-bold">Ae</span>
+                        </div>
+                        <button class="text-gray-400 hover:text-gig-purple">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight">Relationship Manager</h3>
+                    <p class="text-sm text-gray-500 mb-3">Afghanistan</p>
+                    
+                    <div class="flex space-x-4 text-xs text-gray-600 mb-4">
+                        <span>Kabul, Senior</span>
+                        <span>Full-Time</span>
+                        <span class="font-semibold text-gray-800">$105,20 PA</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4 h-8 overflow-hidden">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 text-[10px] font-medium mb-4">
+                        <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full">#Design</span>
+                        <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full">#Senior</span>
+                        <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full">#User Experience</span>
+                    </div>
+                    
+                    <div class="text-xs text-gray-400 text-right">28 March 2021</div>
+                </div>
+
+                <!-- Job Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 cursor-pointer">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="icon-container bg-orange-100 text-orange-800">
+                            <!-- Placeholder for Logo/Icon -->
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.764 23.764 0 0112 15c-1.396 0-2.759-.28-4-.79V10a2 2 0 00-2-2h4a2 2 0 012 2v2M21 13.255V17a2 2 0 01-2 2H5a2 2 0 01-2-2v-3.745M21 13.255L12 10l-9 3.255" />
+                            </svg>
+                        </div>
+                        <button class="text-gray-400 hover:text-gig-purple">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight">Opening For Relationship Associate - Bancassurance</h3>
+                    <p class="text-sm text-gray-500 mb-3">Ethiopia - Virtual</p>
+                    
+                    <div class="flex space-x-4 text-xs text-gray-600 mb-4">
+                        <span>Addis Ababa</span>
+                        <span>Full-Time</span>
+                        <span class="font-semibold text-gray-800">$100,00 PA</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4 h-8 overflow-hidden">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 text-[10px] font-medium mb-4">
+                        <span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded-full">#Design</span>
+                        <span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded-full">#Senior</span>
+                        <span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded-full">#User Experience</span>
+                    </div>
+                    
+                    <div class="text-xs text-gray-400 text-right">28 March 2021</div>
+                </div>
+
+                <!-- Job Card 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 cursor-pointer">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="icon-container bg-teal-100 text-teal-800">
+                            <span class="text-xl font-bold">3MAX</span>
+                        </div>
+                        <button class="text-gray-400 hover:text-gig-purple">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight">Job Opportunity For Sales Professionals...</h3>
+                    <p class="text-sm text-gray-500 mb-3">Mozambique</p>
+                    
+                    <div class="flex space-x-4 text-xs text-gray-600 mb-4">
+                        <span>Maputo</span>
+                        <span>Full-Time</span>
+                        <span class="font-semibold text-gray-800">$5,200 PA</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4 h-8 overflow-hidden">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 text-[10px] font-medium mb-4">
+                        <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full">#Design</span>
+                        <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full">#Senior</span>
+                        <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full">#User Experience</span>
+                    </div>
+                    
+                    <div class="text-xs text-gray-400 text-right">28 March 2021</div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- 3. Filter Sidebar (Right) -->
+        <aside id="filter-sidebar" class="filter-closed bg-white border-l border-gray-100 flex-shrink-0 transition-all duration-300 overflow-y-auto sticky top-0 h-screen max-h-screen">
             <div class="flex flex-col space-y-8 h-full">
                 <h2 class="text-xl font-bold text-gray-900 border-b pb-4">Job Filters</h2>
 
